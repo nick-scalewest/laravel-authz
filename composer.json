@@ -1,5 +1,5 @@
 {
-    "name": "nick-scalewest/laravel-authz",
+    "name": "casbin/laravel-authz",
     "keywords": [
         "laravel",
         "casbin",
