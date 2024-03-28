@@ -24,8 +24,8 @@
         "illuminate/support": "~5.5|~6.0|~7.0|~8.0|~9.0|~10.0|~11.0",
         "illuminate/database": "~5.5|~6.0|~7.0|~8.0|~9.0|~10.0|~11.0",
         "illuminate/console": "~5.5|~6.0|~7.0|~8.0|~9.0|~10.0|~11.0",
-        "nick-scalewest/php-casbin": "~1.0",
-        "nick-scalewest/psr3-bridge": "^1.1"
+        "nick-scalewest/php-casbin": "^1.0",
+        "nick-scalewest/psr3-bridge": "^1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "~7.0|~8.0|~9.0|~10.5",
