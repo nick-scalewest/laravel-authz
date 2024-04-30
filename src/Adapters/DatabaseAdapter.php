@@ -205,7 +205,7 @@ class DatabaseAdapter implements DatabaseAdapterContract, BatchDatabaseAdapterCo
     {
         $removedRules = [];
         $instance = $this->eloquent->where('ptype', $ptype);
-        
+
         foreach (range(0, 5) as $value) {
             if ($fieldIndex <= $value && $value < $fieldIndex + count($fieldValues)) {
                 if ('' != $fieldValues[$value - $fieldIndex]) {
@@ -332,9 +332,12 @@ class DatabaseAdapter implements DatabaseAdapterContract, BatchDatabaseAdapterCo
         $rows = $instance->get()->makeHidden(['created_at','updated_at', 'id'])->toArray();
         foreach ($rows as $row) {
             $row = array_filter($row, function($value) { return !is_null($value) && $value !== ''; });
-            $line = implode(', ', array_filter($row, function ($val) {
+            $line = implode('", "', array_filter($row, function ($val) {
                 return '' != $val && !is_null($val);
             }));
+            if(trim($line) != '') {
+                $line = trim('"'.trim($line).'"');
+            }
             $this->loadPolicyLine(trim($line), $model);
         }
         $this->setFiltered(true);
